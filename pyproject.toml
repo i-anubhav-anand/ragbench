@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragbench"
+version = "0.1.0"
+description = "Lightweight RAG pipeline benchmarking CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Anubhav Anand", email = "anubhavanand3116@gmail.com" }]
+dependencies = [
+    "click>=8.1.8",
+    "pandas>=2.2.3",
+    "numpy>=2.2.0",
+    "pyyaml>=6.0.2",
+    "scikit-learn>=1.6.1",
+    "rich>=13.9.4",
+]
+
+[project.scripts]
+ragbench = "ragbench.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.0",
+    "ruff>=0.8.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
