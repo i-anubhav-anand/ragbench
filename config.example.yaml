@@ -1,0 +1,19 @@
+# ragbench example config
+retriever:
+  type: dense
+  model: all-MiniLM-L6-v2
+  top_k: 10
+
+generator:
+  type: openai
+  model: gpt-4o-mini
+  temperature: 0.0
+
+metrics:
+  - precision_at_5
+  - recall_at_5
+  - mrr
+  - ndcg_at_10
+  - hit_rate_at_5
+
+output_dir: ./results
